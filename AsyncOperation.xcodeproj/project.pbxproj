@@ -10,6 +10,9 @@
 		B63315B71B8AF5DD00416D09 /* AsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = B63315B61B8AF5DD00416D09 /* AsyncOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B63315BE1B8AF5DD00416D09 /* AsyncOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B63315B31B8AF5DD00416D09 /* AsyncOperation.framework */; };
 		B63315C31B8AF5DD00416D09 /* AsyncOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63315C21B8AF5DD00416D09 /* AsyncOperationTests.swift */; };
+		B63315CE1B8AF5F200416D09 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63315CD1B8AF5F200416D09 /* AsyncOperation.swift */; };
+		B6ABB16A1B8B0062003C3A94 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B63315CD1B8AF5F200416D09 /* AsyncOperation.swift */; };
+		B6ABB16F1B8B0778003C3A94 /* TestAsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ABB16E1B8B0778003C3A94 /* TestAsyncOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,8 @@
 		B63315BD1B8AF5DD00416D09 /* AsyncOperationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncOperationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B63315C21B8AF5DD00416D09 /* AsyncOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperationTests.swift; sourceTree = "<group>"; };
 		B63315C41B8AF5DD00416D09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B63315CD1B8AF5F200416D09 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		B6ABB16E1B8B0778003C3A94 /* TestAsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAsyncOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				B63315B61B8AF5DD00416D09 /* AsyncOperation.h */,
+				B63315CD1B8AF5F200416D09 /* AsyncOperation.swift */,
 				B63315B81B8AF5DD00416D09 /* Info.plist */,
 			);
 			path = AsyncOperation;
@@ -81,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				B63315C21B8AF5DD00416D09 /* AsyncOperationTests.swift */,
+				B6ABB16E1B8B0778003C3A94 /* TestAsyncOperation.swift */,
 				B63315C41B8AF5DD00416D09 /* Info.plist */,
 			);
 			path = AsyncOperationTests;
@@ -142,6 +149,7 @@
 		B63315AA1B8AF5DC00416D09 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Dan Williams";
 				TargetAttributes = {
@@ -193,6 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B63315CE1B8AF5F200416D09 /* AsyncOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +209,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6ABB16A1B8B0062003C3A94 /* AsyncOperation.swift in Sources */,
+				B6ABB16F1B8B0778003C3A94 /* TestAsyncOperation.swift in Sources */,
 				B63315C31B8AF5DD00416D09 /* AsyncOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +318,7 @@
 		B63315C81B8AF5DD00416D09 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +329,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.danwilliams.AsyncOperation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B63315C91B8AF5DD00416D09 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -375,6 +389,7 @@
 				B63315C91B8AF5DD00416D09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B63315CA1B8AF5DD00416D09 /* Build configuration list for PBXNativeTarget "AsyncOperationTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +398,7 @@
 				B63315CC1B8AF5DD00416D09 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
