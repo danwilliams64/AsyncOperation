@@ -29,7 +29,7 @@ public class AsyncOperation: NSOperation {
             willChangeValueForKey("isFinished")
         }
         didSet {
-            willChangeValueForKey("isFinished")
+            didChangeValueForKey("isFinished")
         }
     }
     
