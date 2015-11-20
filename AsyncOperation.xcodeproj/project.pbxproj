@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		372D2E201BFF7511001A9FDD /* AsyncOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 372D2E1F1BFF7511001A9FDD /* AsyncOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		372D2E271BFF7511001A9FDD /* AsyncOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 372D2E1C1BFF7511001A9FDD /* AsyncOperation.framework */; };
-		372D2E2C1BFF7511001A9FDD /* AsyncOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D2E2B1BFF7511001A9FDD /* AsyncOperationTests.swift */; };
+		372D2E371BFF7523001A9FDD /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D2E361BFF7523001A9FDD /* AsyncOperation.swift */; };
+		372D2E391BFF7555001A9FDD /* AsyncOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D2E381BFF7555001A9FDD /* AsyncOperationTests.swift */; };
+		372D2E3B1BFF7568001A9FDD /* TestAsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372D2E3A1BFF7568001A9FDD /* TestAsyncOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +29,10 @@
 		372D2E1F1BFF7511001A9FDD /* AsyncOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsyncOperation.h; sourceTree = "<group>"; };
 		372D2E211BFF7511001A9FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		372D2E261BFF7511001A9FDD /* AsyncOperationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsyncOperationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		372D2E2B1BFF7511001A9FDD /* AsyncOperationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncOperationTests.swift; sourceTree = "<group>"; };
 		372D2E2D1BFF7511001A9FDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		372D2E361BFF7523001A9FDD /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		372D2E381BFF7555001A9FDD /* AsyncOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperationTests.swift; sourceTree = "<group>"; };
+		372D2E3A1BFF7568001A9FDD /* TestAsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestAsyncOperation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				372D2E1F1BFF7511001A9FDD /* AsyncOperation.h */,
+				372D2E361BFF7523001A9FDD /* AsyncOperation.swift */,
 				372D2E211BFF7511001A9FDD /* Info.plist */,
 			);
 			path = AsyncOperation;
@@ -80,7 +85,8 @@
 		372D2E2A1BFF7511001A9FDD /* AsyncOperationTests */ = {
 			isa = PBXGroup;
 			children = (
-				372D2E2B1BFF7511001A9FDD /* AsyncOperationTests.swift */,
+				372D2E381BFF7555001A9FDD /* AsyncOperationTests.swift */,
+				372D2E3A1BFF7568001A9FDD /* TestAsyncOperation.swift */,
 				372D2E2D1BFF7511001A9FDD /* Info.plist */,
 			);
 			path = AsyncOperationTests;
@@ -194,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				372D2E371BFF7523001A9FDD /* AsyncOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +208,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				372D2E2C1BFF7511001A9FDD /* AsyncOperationTests.swift in Sources */,
+				372D2E3B1BFF7568001A9FDD /* TestAsyncOperation.swift in Sources */,
+				372D2E391BFF7555001A9FDD /* AsyncOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +316,7 @@
 		372D2E311BFF7511001A9FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -318,12 +327,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = co.danwilliams.AsyncOperation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		372D2E321BFF7511001A9FDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -340,16 +351,19 @@
 		372D2E341BFF7511001A9FDD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AsyncOperationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.danwilliams.AsyncOperationTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		372D2E351BFF7511001A9FDD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = AsyncOperationTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = co.danwilliams.AsyncOperationTests;

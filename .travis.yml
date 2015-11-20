@@ -1,0 +1,20 @@
+language: objective-c
+osx_image: xcode7.1
+# xcode_project: AsyncOperation.xcodeproj
+# xcode_scheme: AsyncOperation
+
+script:
+  xctool
+  -project AsyncOperation.xcodeproj
+  -scheme AsyncOperation
+  -sdk iphonesimulator
+  -destination 'platform=iOS Simulator,name=iPhone 6s Plus'
+  build
+  test
+  ONLY_ACTIVE_ARCH=NO
+  CODE_SIGN_IDENTITIY=""
+  CODE_SIGNING_REQUIRED=NO
+
+before_install:
+  - brew update
+  - brew uninstall xctool && brew install --HEAD xctool
