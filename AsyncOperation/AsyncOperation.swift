@@ -66,7 +66,7 @@ public class AsyncOperation: NSOperation {
     /**
      Called from within the `execute` function when the operation has completed.
      */
-    public func finish() {
+    internal func finish() {
         internalExecuting = false
         internalFinshed = true
     }
